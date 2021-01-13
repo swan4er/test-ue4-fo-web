@@ -1133,7 +1133,7 @@ $(document).ready(function() {
 				return { db: db, wasmBytes: wasmBytes, fromIndexedDB: true };
 			});
 		}).catch(function() {
-			return download(Module.locateFile('https://rawcdn.githack.com/swan4er/test-ue4-fo-web/raw/master/HTML5/UE4Game.wasm'), 'arraybuffer').then(function(wasmBytes) {
+			return download(Module.locateFile('https://www.dropbox.com/s/mlavc3i3bwsxfk2/UE4Game.wasm?dl=1'), 'arraybuffer').then(function(wasmBytes) {
 				return { db: db, wasmBytes: wasmBytes, fromIndexedDB: false };
 			});
 		});
@@ -1167,9 +1167,9 @@ $(document).ready(function() {
 			});
 */
 // Instead as a fallback, download as ArrayBuffer. (TODO: Figure out the bugs with the above, and switch to using that one instead)
-			fetchOrDownloadAndStore(db, Module.locateFile('https://rawcdn.githack.com/swan4er/test-ue4-fo-web/raw/master/HTML5/MyProject.data'), 'arraybuffer').then(function(dataArrayBuffer) {
+			fetchOrDownloadAndStore(db, Module.locateFile('https://www.dropbox.com/s/pjqc302rz2dae8d/MyProject.data?dl=1'), 'arraybuffer').then(function(dataArrayBuffer) {
 				Module['preloadedPackages'] = {};
-				Module['preloadedPackages'][Module.locateFile('https://rawcdn.githack.com/swan4er/test-ue4-fo-web/raw/master/HTML5/MyProject.data')] = dataArrayBuffer;
+				Module['preloadedPackages'][Module.locateFile('https://www.dropbox.com/s/pjqc302rz2dae8d/MyProject.data?dl=1')] = dataArrayBuffer;
 				return dataJsDownload.then(addScriptToDom);
 			});
 
