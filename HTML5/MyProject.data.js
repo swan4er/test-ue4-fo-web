@@ -18,8 +18,8 @@ Module.expectedDataFileDownloads++;
     } else {
       throw 'using preloaded data can only be done on a web page or in a web worker';
     }
-    var PACKAGE_NAME = 'D:/Epic Games/Projects/MyProject/Binaries/HTML5/MyProject.data';
-    var REMOTE_PACKAGE_BASE = 'MyProject.data';
+    var PACKAGE_NAME = 'http://tildatest:3000/MyProject';
+    var REMOTE_PACKAGE_BASE = 'http://tildatest:3000/MyProject';
     if (typeof Module['locateFilePackage'] === 'function' && !Module['locateFile']) {
       Module['locateFile'] = Module['locateFilePackage'];
       err('warning: you defined Module.locateFilePackage, that has been renamed to Module.locateFile (using your locateFilePackage for now)');
@@ -149,10 +149,10 @@ Module['FS_createPath']('/MyProject/Content', 'Paks', true, true);
           for (var i = 0; i < files.length; ++i) {
             DataRequest.prototype.requests[files[i].filename].onload();
           }
-              Module['removeRunDependency']('datafile_D:/Epic Games/Projects/MyProject/Binaries/HTML5/MyProject.data');
+              Module['removeRunDependency']('datafile_http://tildatest:3000/MyProject');
 
     };
-    Module['addRunDependency']('datafile_D:/Epic Games/Projects/MyProject/Binaries/HTML5/MyProject.data');
+    Module['addRunDependency']('datafile_http://tildatest:3000/MyProject');
   
     if (!Module.preloadResults) Module.preloadResults = {};
   
